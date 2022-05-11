@@ -1,17 +1,24 @@
 import React from 'react';
+import { useState } from 'react';
 import Header from './Components/Header/Header';
 import Form from './Components/Form/Form';
-import Results from './Components/Results/Results';
+import Results from './Components/Results/FinishTimes';
 import './App.scss';
 
-function App() {
+const App = () => {
+  const [finishTimes, setFinishTimes] = useState([]);
+
+  const getResults = (input) => {
+    setFinishTimes([...finishTimes, input])
+    return finishTimes
+  }
+
   return (
     <section className='race-log-container'>
       <Header />
-      <Form />
-      <Results />
+      <Form getResults={getResults} />
+      <Results finishTimes={finishTimes} />
     </section>
-
   );
 }
 

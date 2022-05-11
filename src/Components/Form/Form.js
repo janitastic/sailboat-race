@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import './Form.scss';
 
-const Form = () => {
+const Form = ({ getResults }) => {
   const [userInput, setInput] = useState('');
 
   const handleSubmit = event => {
-    event.preventDefault();
-    setInput('');
+    event.preventDefault()
+    getResults(userInput)
+    setInput('')
   }
 
   return (

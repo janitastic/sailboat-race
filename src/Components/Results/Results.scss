@@ -1,0 +1,15 @@
+.results-container {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1f 1fr;
+  height: 50%;
+  margin: 5%;
+
+  h2 {
+    font-family: 'ProximaNova-Bold';
+  }
+ 
+  .overall-average {
+    grid-column: auto/span 2;
+  }
+}

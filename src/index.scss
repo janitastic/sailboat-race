@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  font-family: 'ProximaNova-Regular';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@font-face {
+  font-family: 'ProximaNova-Regular';
+  src: local('ProximaNova-Regular'), url(./assets/ProximaNova-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'ProximaNova-Bold';
+  font-weight: 900;
+  src: local('ProximaNova-Bold'), url(./assets/ProximaNova-Bold.otf) format('opentype');
+}

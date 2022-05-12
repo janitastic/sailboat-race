@@ -6,6 +6,12 @@
     border-bottom: 1px solid #D3D4D7;
     padding-bottom: 5%;
     margin-bottom: 5%;
+
+    ul {
+      li {
+        line-height: 1.2em;
+      }
+    }
   }
 
   label {

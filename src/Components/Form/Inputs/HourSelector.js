@@ -10,7 +10,7 @@ const HourSelector = ({ handleChange }) => {
   });
 
   return (
-    <select className='input-field' name='hours' type='number' onChange={(e) => handleChange(e)}>
+    <select className='input-field' name='hours' type='number' aria-label='hour selection' onChange={(e) => handleChange(e)}>
       <option>Hour</option>
       {options}
     </select>

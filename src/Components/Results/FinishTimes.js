@@ -12,15 +12,13 @@ const FinishTimes = ({ loggedRaces }) => {
 
   useEffect(() => {
     setFinishTimes(
-      loggedRaces.reduce((finishTimes, value) => {
-        let input = value.split(' ');
-        let time = input[0].split(':');
+      loggedRaces.reduce((finishTimes, log) => {
 
         let race = {
-          hours: parseInt(time[0]),
-          minutes: parseInt(time[1]),
-          period: input[1],
-          day: parseInt(input[3])
+          hours: parseInt(log.hours),
+          minutes: parseInt(log.minutes),
+          period: log.period,
+          day: parseInt(log.day)
         }
 
         if (race.day > 1) {

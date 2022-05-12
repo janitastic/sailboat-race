@@ -1,0 +1,26 @@
+@use './variables' as v;
+
+@mixin flexbox($direction, $wrap, $alignContent, $justify, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $alignContent;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin button($backgroundColor) {
+  background-color: $backgroundColor;
+  color: v.$offWhite;
+  border: none;
+  cursor: pointer;
+  margin: 0 2%;
+  line-height: 2.4em;
+  border-radius: 3px;
+  padding: 0 4%;
+  font-size: 1em;
+}
+
+@mixin buttonHover($backgroundColor) {
+  background-color: $backgroundColor;
+}

@@ -1,8 +1,10 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
 header {
-  background-color: #0E3042;
+  background-color: v.$navy;
   height: 10%;
-  display: flex;
-  align-items: center;
+  @include m.flexbox(row, nowrap, normal, normal, center);
 
   .logo {
     height: 60%;

@@ -1,3 +1,6 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
 .results-container {
   display: grid;
   grid-gap: 2em;

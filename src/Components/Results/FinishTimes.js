@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import RaceLogs from './RaceLogs';
+import AverageTime from './AverageTime';
 
 const FinishTimes = ({ loggedRaces }) => {
   const [finishTimes, setFinishTimes] = useState([]);
@@ -22,7 +22,6 @@ const FinishTimes = ({ loggedRaces }) => {
           period: input[1],
           day: parseInt(input[3])
         }
-        console.log(race)
 
         if (race.day > 1) {
           race.day -= 1
@@ -45,17 +44,20 @@ const FinishTimes = ({ loggedRaces }) => {
 
         finishTimes.push(finishTime)
 
-        console.log(finishTime)
         return finishTimes;
       }, [])
     )
   }, [loggedRaces])
 
-  console.log({finishTimes})
   return (
     <>
-      <h2>Finish Times</h2>
+      <aside className='finish-times'>
+        <h2>Finish Times</h2>
         <ol>{finishTime}</ol>
+      </aside>
+      <aside className='overall-average'>
+        <AverageTime finishTimes={finishTimes} />
+      </aside>
     </>
   )
 }

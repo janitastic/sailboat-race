@@ -1,9 +1,9 @@
 const ClearButton = ({ clearResults }) => {
-  <article className='button-container'>
+  return (
     <button type='reset' onClick={() => {clearResults()}}>
       Clear Results
     </button>
-  </article>
+  )
 }
 
 export default ClearButton;

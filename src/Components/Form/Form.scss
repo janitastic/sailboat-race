@@ -1,13 +1,20 @@
-.form-container {
+.form-instructions {
   margin: 5%;
   border-bottom: 1px solid #D3D4D7;
 
+  .instructions-container {
+    border-bottom: 1px solid #D3D4D7;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+  }
+
   label {
+    padding: 10% 0 0;
     color: #35383B;
   }
 
   form {
-    margin: 1% 0 10%;
+    margin: 1% 0 5%;
     
     input[type=number], select[type=number], select[type=text], input::placeholder {
       color: #35383B;

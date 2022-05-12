@@ -19,7 +19,7 @@ const App = () => {
   }
 
   return (
-    <section className='race-log-container'>
+    <main>
       <Header />
       <Form getResults={getResults} />
       <article className='results-container'>
@@ -31,7 +31,7 @@ const App = () => {
           Clear Results
         </button>
       </article>
-    </section>
+    </main>
   );
 }
 

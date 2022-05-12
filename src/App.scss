@@ -13,4 +13,22 @@
   border: 1px solid #E5E6E7;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10%;
+}
+
+button {
+  background-color: #EB5620;
+  color: #f2f2f2;
+  border: none;
+  cursor: pointer;
+  margin: 0 2%;
+  line-height: 2.4em;
+  border-radius: 3px;
+  padding: 0 4%;
+  font-size: 1em;
+}
+
 

@@ -14,6 +14,10 @@ const App = () => {
     return loggedRaces
   }
 
+  const clearResults = () => {
+    setLoggedRaces([]);
+  }
+
   return (
     <section className='race-log-container'>
       <Header />
@@ -21,6 +25,11 @@ const App = () => {
       <article className='results-container'>
           <RaceLogs loggedRaces={loggedRaces} />
           <FinishTimes loggedRaces={loggedRaces}/>
+      </article>
+      <article className='button-container'>
+        <button type='reset' onClick={() => {clearResults()}}>
+          Clear Results
+        </button>
       </article>
     </section>
   );

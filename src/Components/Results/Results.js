@@ -1,21 +1,27 @@
-import { useState } from 'react';
-import './Results.scss';
+import RaceLogs from './RaceLogs';
+import FinishTimes from './FinishTimes';
+import ClearButton from './ClearButton';
 
-const Results = () => {
-
-  return (
-    <article className='results-container'>
-      <aside className='finish-times'>
-        <h2>Finish Times</h2>
-      </aside>
-      <aside className='total-minutes'>
-        <h2>Completion Time</h2>
-      </aside>
-      <aside className='overall-average'>
-        <h2>Overall Average</h2>
-      </aside>
-    </article>
-  )
+const Results = ({ loggedRaces, clearResults }) => {
+  if (!loggedRaces.length) {
+    return (
+      <article className='no-results'>
+        <p>Enter a completed race time and day above to view results.</p>
+      </article>
+    )
+  } else {
+    return (
+      <>
+        <article className='results-container'>
+          <RaceLogs loggedRaces={loggedRaces} />
+          <FinishTimes loggedRaces={loggedRaces}/>
+        </article>
+        <article className='button-container'>
+          <ClearButton clearResults={clearResults} />
+        </article>
+      </>
+    )
+  }
 }
 
 export default Results;

@@ -1,31 +1,55 @@
-.form-container {
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+.form-instructions {
   margin: 5%;
-  border-bottom: 1px solid #D3D4D7;
+  border-bottom: v.$border;
+
+  .instructions-container {
+    border-bottom: v.$border;
+    padding-bottom: 5%;
+    margin-bottom: 5%;
+
+    ul {
+      li {
+        line-height: 1.2em;
+      }
+    }
+  }
 
   label {
-    color: #35383B;
+    padding: 10% 0 0;
+    color: v.$darkGray;
   }
 
   form {
-    margin: 1% 0 20%;
+    margin: 1% 0 5%;
+    
+    input[type=number], select[type=number], select[type=text], input::placeholder {
+      color: v.$darkGray;
+    }
 
-    input {
-      line-height: 2.5em;
-      border: 1px solid #D3D4D7;
+    .input-field {
+      border: v.$border;
       border-radius: 3px;
-      width: 18em;
+      min-width: 3em;
+      height: 2em;
+      font-size: 1em;
+      padding: 0 1%;
+      margin: 1%;
+    }
+
+    .error-message {
+      font-style: italic;
+      color: v.$orange;
     }
     
     button {
-      background-color: #2A5BD7;
-      color: #f2f2f2;
-      border: none;
-      cursor: pointer;
-      margin: 0 2%;
-      line-height: 2.4em;
-      border-radius: 3px;
-      padding: 0 4%;
-      font-size: 1em;
+      @include m.button(v.$blue);
+
+      &:hover {
+        @include m.buttonHover(v.$orange);
+      }
     }
   }
 }

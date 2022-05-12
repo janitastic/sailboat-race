@@ -1,15 +1,23 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
 .results-container {
   display: grid;
   grid-gap: 2em;
-  grid-template-columns: 1f 1fr;
+  grid-template-columns: 1fr 1fr;
   height: 50%;
   margin: 5%;
-
-  h2 {
-    font-family: 'ProximaNova-Bold';
-  }
  
   .overall-average {
     grid-column: auto/span 2;
+    text-align: center;
+  }
+}
+
+.no-results {
+  p {
+    text-align: center;
+    font-style: italic;
+    color: #0E3042;
   }
 }

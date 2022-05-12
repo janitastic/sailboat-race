@@ -22,7 +22,6 @@ const Form = ({ getResults }) => {
       setError('')
       getResults(inputs)
       e.target.reset()
-      setInputs({})
     }
   }
 

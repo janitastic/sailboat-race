@@ -15,6 +15,7 @@ const App = () => {
 
   const clearResults = () => {
     setLoggedRaces([]);
+    window.location.reload()
   }
 
   const displayResults = () => {

@@ -7,13 +7,20 @@
   }
 
   form {
-    margin: 1% 0 20%;
+    margin: 1% 0 10%;
+    
+    input[type=number], select[type=number], select[type=text], input::placeholder {
+      color: #35383B;
+    }
 
-    input {
-      line-height: 2.5em;
+    .input-field {
       border: 1px solid #D3D4D7;
       border-radius: 3px;
-      width: 18em;
+      min-width: 3em;
+      height: 2em;
+      font-size: 1em;
+      padding: 0 1%;
+      margin: 1%;
     }
     
     button {

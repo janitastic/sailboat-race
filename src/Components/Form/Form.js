@@ -1,23 +1,34 @@
 import { useState } from 'react';
 import './Form.scss';
+import HourSelector from './Inputs/HourSelector';
+import MinuteSelector from './Inputs/MinuteSelector';
 
 const Form = ({ getResults }) => {
-  const [userInput, setInput] = useState('')
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    getResults(userInput)
-    setInput('')
+    getResults(inputs)
+    e.target.reset()
   }
 
   return (
     <article className='form-container'>
       <label>Race Time</label>
-      <form onSubmit={handleSubmit}>
-        <input type='text' 
-          onChange={e => setInput(e.target.value)}
-          value={userInput}
-        />
+      <form onSubmit={ handleSubmit }>
+        <HourSelector handleChange={ (e) => handleChange(e) } />
+        <MinuteSelector handleChange={ (e) => handleChange(e) } />
+        <select className='input-field' name='period' type='text' onChange={ (e) => handleChange(e) }>
+          <option>AM/PM</option>
+          <option value='AM'>AM</option>
+          <option value='PM'>PM</option>
+        </select>
+        <input className='input-field' name='day' type='number' min={0} max={365} placeholder='Day' onChange={ (e) => handleChange(e) } />
         <button type='submit'>Submit</button>
       </form>
     </article>

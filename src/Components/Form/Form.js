@@ -6,6 +6,7 @@ import Instructions from './Instructions';
 
 const Form = ({ getResults }) => {
   const [inputs, setInputs] = useState({});
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -14,8 +15,21 @@ const Form = ({ getResults }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    getResults(inputs)
-    e.target.reset()
+    if (!inputs.hours || !inputs.minutes || !inputs.period || !inputs.day) {
+      displayError()
+      return 
+    } else {
+      setError('')
+      getResults(inputs)
+      e.target.reset()
+      setInputs({})
+    }
+  }
+
+  const displayError = () => {
+    setError(
+      <p className='error-message'>*Please enter all fields.</p>
+    )
   }
 
   return (
@@ -33,6 +47,7 @@ const Form = ({ getResults }) => {
           </select>
           <input className='input-field' name='day' type='number' aria-label='day # input' min={0} max={365} placeholder='Day' onChange={ (e) => handleChange(e) } />
           <button type='submit'>Submit</button>
+          {error}
         </form>
       </article>
     </section>
